@@ -1,0 +1,11 @@
+*  How to get better at programming according to Steve Yegge
+- Learn how to type
+- Know half a dozen programming languages
+- Know machine learning
+- Learn pubsub
+- Learn a log processing framework like spark or scala
+- Learn big data skills
+- Learn SQL
+- Learn mobile application programming
+- Learn UNIX
+

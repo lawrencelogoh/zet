@@ -1,0 +1,6 @@
+* Lawrence Logoh's Public Zettelkasten
+https://zettelkasten.de/posts/overview/
+
+** Structure
+- current_year
+  - unix_timestamp.org
