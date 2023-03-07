@@ -1,0 +1,22 @@
+*  testing 123
+* How to get better at programming according to Steve Yegge
+- Learn how to type
+- Know half a dozen programming languages
+- Know machine learning
+- Learn pubsub
+- Learn a log processing framework like spark or scala
+- Learn big data skills
+- Learn SQL
+- Learn mobile application programming
+- Learn UNIX
+*  A kernel programming language
+/from reading the preface of "concepts techniques and models of computer programming"/
+
+As I understand it, it's almost like having this "fake" programming language in your head.
+You build it with your first practical programming language and it serves as the foundation
+for the way that you think about programming.
+Like Plato's theory of forms, there is a "perfect" kernel programming language and
+all other programming languages are an imperfect imitation of the original.
+Or all kernel languages are just subsets of the perfect kernel programming language.
+Theoretically, the more programming concepts you learn the closer you get to a perfect kernel programming language.
+
