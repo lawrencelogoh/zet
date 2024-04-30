@@ -1,0 +1,12 @@
+* How to do things deliberately                             :learning:quotes:
+"And by doing everything with the clear purpose of writing about it, you
+will do what you do /deliberately/." 
+- Sönke Ahrens
+
+I've never thought about it this way. I guess in a way it's similar to
+the idea of learning like you're going to teach something.
+For technical things, I guess I can try to apply this by approaching it
+like I'm going to write an instructional book about it.
+And to be very clear, this is very different from "tutorials" as it's
+not merely teaching how to do something.
+It also includes trying to help people understand something. 

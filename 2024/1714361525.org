@@ -1,0 +1,7 @@
+*  Toolbox for writing smart notes                                 :learning:
+   We need four tools to write smart notes
+   - Something to write on(Computer, phone or paper, whichever is accessible)
+   - A reference management system (A way to collect references and
+     notes taken during reading, maybe org-capture and something else?)
+   - The slip-box
+   - An editor(Emacs)
