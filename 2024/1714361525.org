@@ -1,7 +1,13 @@
-*  Toolbox for writing smart notes                                 :learning:
+*  Toolbox for writing smart notes                                 :learning:notetaking:
    We need four tools to write smart notes
    - Something to write on(Computer, phone or paper, whichever is accessible)
    - A reference management system (A way to collect references and
-     notes taken during reading, maybe org-capture and something else?)
+     notes taken during reading)
    - The slip-box
    - An editor(Emacs)
+
+The one thing I'm not too familiar with here is the reference management
+system. My understanding is that it's a place to keep more "concrete"
+things, like references to papers that expand more on an idea mentioned
+in an article or something. They don't contain my own personal thoughts
+about it. That would be in the zettelkasten.

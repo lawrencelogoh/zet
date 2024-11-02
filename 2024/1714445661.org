@@ -1,0 +1,10 @@
+*  Categories of notes and why to keep the separate     :learning:notetaking:
+1. Fleeting Notes
+2. Permanent Notes
+3. Project notes
+
+These ideas have to be kept separate to "build a critical mass of ideas"
+within the zettelkasten.
+The main focus here is the permanent notes.
+Keeping the other notes here will dilute the zettelkasten and building a
+critical mass will be difficult.
