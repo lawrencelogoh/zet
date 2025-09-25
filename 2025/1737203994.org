@@ -1,0 +1,127 @@
+* Tips for C Programming by Nic Barker                        :programming:c:
+[[https://www.youtube.com/watch?v=9UIIMBqq1D4][The video]]
+** There are different versions of C
+C89 is the most compatible but C99 and upwards gives you some really
+nice features.
+C99 is what Nic personally uses.
+** Compiler flags
+#+begin_src shell
+clang -std=c99 -Wall -Werror
+#+end_src
+This is what Nic uses.
+I recommend exploring more based on what you like and or care about.
+** Project structure
+Most of the way people do things are conventions not rules enforced by
+the compiler.
+For example you don't even need to add the =.c= extension to your files,
+anything will work.
+There are many ways of structuring a project to avoid these things but
+Nic recommends a "Single Translation Unit" also know as a Unity Build
+system.
+The main idea is that you do all your includes in your main file.
+** Debuggers
+Print debugging is fine but in C you will need a debugger to catch some
+errors.
+This is especially useful for segmentation faults and memory corruption.
+** Address Sanitation(ASAN)
+Address Sanitizers are a set of tools to help you catch memory corruption issues.
+Google has standalone tools for this and some compilers also have them
+built in.
+With clang for example you can do
+#+begin_src sh
+clang -fsanitize=address
+#+end_src
+** Arrays and Strings
+C does not do any runtime bounds checking on array access.
+Nic considers runtime bounds checking to be essential in modern times.
+He creates structs that store the current length and the total capacity
+in addition to a pointer to the first element.
+He then passes them around as function arguments.
+Then finally, he uses a get function for the array.
+For example
+#+begin_src c
+#include <stdlib.h>
+
+typedef struct {
+  int32_t* items;
+  int32_t length;
+  int32_t capacity;
+} Int32Array;
+
+int32_t Int32ArrayGet(Int32Array array, int32_t index){
+  if (index >= 0 && index < array.length){
+    return array.items[index];
+  }
+  return 0;
+  // you can also do something like raise(SIGTRAP) here
+  // instead of the return
+}
+
+void IterateItems(Int32Array array){
+  for (int32_t i = 0; i < array.length; i++){
+    int32_t item = Int32Array_Get(array, i);
+  }
+}
+
+int main(void){
+
+  Int32Array array = {};
+  IterateItems(array);
+}
+#+end_src
+
+There are other approaches like using macros.
+Pick an approach you like.
+** Strings
+Avoid using standard library string functions whenever you can.
+The alternative is to do the same thing you do with arrays.
+You'll unfortunately(or fortunately) have to write your own functions to
+handle strings.
+#+begin_src c
+typedef struct {
+  char* chars;
+  int32_t length;
+} String;
+
+void PrintChars(String string) {
+  for (int i = 0; i < string.length; i++){
+    printf("%c", string.chars[i]);
+  }
+
+}
+#+end_src
+One benefit you get from an approach like this is the ability to create
+string slices.
+** Indices and Pointers
+If you want to reference an object in an array, instead of storing a
+pointer to it, you can store the index of the object in the array
+instead.
+#+begin_src c
+typedef struct User{
+  String name;
+  User* friend;
+};
+
+// VS
+
+typedef struct User{
+  String name;
+  int32_t friendIndex;
+};
+
+#+end_src
+
+To resolve the index into an object we can use the same bounds checking
+that we've been using like so.
+#+begin_src c
+User* friend = UserArray_Get(users, john.friendIndex);
+#+end_src
+
+Checkout [[https://lucassardois.medium.com/generational-indices-guide-8e3c5f7fd594][generational indices]] for handling deletions.
+** Arenas
+An arena is some memory where you store data that share the same
+lifetime.
+So basically, instead of doing =malloc= and =free= with every single
+thing, you do one big =malloc= and one big =free=.
+
+Nic has made some other videos on [[https://www.youtube.com/watch?v=GZ6PuLikw84&t=0s][Allocators]] and [[https://www.youtube.com/watch?v=hI9aN8ZG4vg&t=0s][Arenas]].
