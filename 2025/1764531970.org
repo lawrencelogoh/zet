@@ -4,11 +4,11 @@ Abdul starts with an example project he was building some years ago. He
 was building a smart walking aid for visually impaired users. The main
 requirement was turn by turn navigation. He asked us to use AI to
 generate a plan for the project and then revealed what he went through
-at the time.  
+after we shared our answers.  
 
 The generated project plans had some similarities.
-They all had GPS, TTS and voice first interface.
-They also assumed always having an internet connection.
+- They all had GPS, TTS and a voice first interface.
+- They also assumed always having an internet connection.
 
 The users asked questions or made statements that made the initial
 version "technically correct" but "humanly useless".
@@ -22,10 +22,15 @@ He goes on to talk about other things, but what caught my attention was
 the dichotomy between developers who ship features and developers that
 provide value. 
 
-Personally, I think it depends on what you're trying to do. Sometimes
-you just want to build something, in that case I don't think users
-matter that much. But if users are involved, it's best to do research
-and approach users before you even start building.
+Personally, I think it depends on what you're trying to do.
+
+Sometimes you just want to build something. In that case I don't think users
+matter at all. Just build it and have fun. But if users are involved,
+it's best to do research and approach users before you even start
+building.
+
+/I don't have the slides right now but if he shares them, I will add them
+to the resources./
 
 
 * Resources
