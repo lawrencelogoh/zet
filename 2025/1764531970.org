@@ -1,0 +1,32 @@
+*  Notes on "What Users Teach You About Learning" by Abdul Aziz Tetteh
+
+Abdul starts with an example project he was building some years ago. He
+was building a smart walking aid for visually impaired users. The main
+requirement was turn by turn navigation. He asked us to use AI to
+generate a plan for the project and then revealed what he went through
+at the time.  
+
+The generated project plans had some similarities.
+They all had GPS, TTS and voice first interface.
+They also assumed always having an internet connection.
+
+The users asked questions or made statements that made the initial
+version "technically correct" but "humanly useless".
+
+Questions/Statements like:
+- What if there's no internet?
+- I don't want to look disabled.
+- Will it cost more than my phone?
+
+He goes on to talk about other things, but what caught my attention was
+the dichotomy between developers who ship features and developers that
+provide value. 
+
+Personally, I think it depends on what you're trying to do. Sometimes
+you just want to build something, in that case I don't think users
+matter that much. But if users are involved, it's best to do research
+and approach users before you even start building.
+
+
+* Resources
+https://x.com/abdulaziztetteh
