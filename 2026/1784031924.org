@@ -1,0 +1,65 @@
+*  Day 1 of playing the natural number game
+SCHEDULED: <2026-07-14 Tue>
+
+I've always vaguely known what theorem provers are. I think I've seen
+some people use [[https://opentezos.com/formal-verification/coq/][coq]] and [[https://lean-lang.org/][lean]] but I always thought it was just weird math
+stuff.
+
+I read https://raymyers.org/post/how-to-learn-provers/ and tried playing
+the natural number game and it was pretty fun.
+
+I think I'm starting to slowly get why theorem provers exist.
+** Log
+Played the natural number game.
+It feels like math but I guess technically it's programming.
+
+I solved "2 is the number after the number after 0" almost by intuition
+but I'm not sure I fully understand it.
+I did ~rw[one_eq_succ_zero]~ ~rw[two_eq_succ_one]~ then ~rfl~ and I was
+done.
+
+Okay I think I understand it now.
+All we really know are ~0~ and ~succ~
+~succ 0~ means successor of 0 and ~one_eq_succ_zero~ is an inbuilt proof
+that ~1~ comes after ~0~. What we were trying to prove is that 2 comes
+after one.
+What we start with is ~2 = succ(succ 0)~
+~rw[one_eq_succ_zero]~ changes ~succ 0~ to ~1~ so the statement becomes
+~2 = succ 1~
+Then we do ~rw[two_eq_succ_zero]~ which changes ~succ 1~ to ~2~
+~2 = 2~
+Doing ~rfl~ "checks" if they're equal then we're done.
+
+** Notes
+*** Tactics
+Tactics are commands that describe how to build a proof.
+**** rfl
+rfl = reflexivity (of equality)
+
+This proves goals in the form of ~X = X~.
+if the goal looks like ~x + 37 = x + 37~ then rfl will close it but if
+it looks like ~0 + x = x~ rfl won't work.
+This is because even though ~0 + x~ and ~x~ are equal as numbers, they
+are not equal as terms. The only term which is identical to ~0 + x~ is
+~0 + x~.
+
+
+**** rw
+rw = rewrite
+
+If ~h~ is a proof of an equality ~X = Y~, then ~rw [h]~ will change all Xs in
+the goal to Ys. It's the way to "substitute in".
+
+For example, if you have a goal ~2y = 2(x + 7)~ and you have an assumption
+~h~ saying that ~y = x + 7~. You can use ~rw[h]~ to "substitute in" for ~y~
+before using ~rfl~
+
+So ~2y = 2(x + 7)~ becomes ~2(x + 7) = 2(x + 7)~ and rfl closes it.
+
+*** Numbers
+Every number in lean is either 0 or a successor.
+~succ~ is a constructor not a command.
+I'm not exactly sure what the difference it
+
+Where I ended:
+https://adam.math.hhu.de/#/g/leanprover-community/nng4/world/Tutorial/level/7

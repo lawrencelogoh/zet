@@ -1,0 +1,13 @@
+*  What is a CPU?
+A device that executes instructions of a computer program.
+
+** How does it work?
+Fetch, Decode, Execute.
+
+Fetch = Get the instruction
+Decode = Figure out what the instruction means
+Execute = Do the instruction
+
+** How does it know what the instruction means?
+The Instruction Set Architecture(ISA). It defines what instructions the
+CPU can execute.
