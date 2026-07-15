@@ -15,7 +15,7 @@ It feels like math but I guess technically it's programming.
 
 I solved "2 is the number after the number after 0" almost by intuition
 but I'm not sure I fully understand it.
-I did ~rw[one_eq_succ_zero]~ ~rw[two_eq_succ_one]~ then ~rfl~ and I was
+I did ~rw[ ← one_eq_succ_zero]~ ~rw[← two_eq_succ_one] ~ then ~rfl~ and I was
 done.
 
 Okay I think I understand it now.
@@ -24,12 +24,17 @@ All we really know are ~0~ and ~succ~
 that ~1~ comes after ~0~. What we were trying to prove is that 2 comes
 after one.
 What we start with is ~2 = succ(succ 0)~
-~rw[one_eq_succ_zero]~ changes ~succ 0~ to ~1~ so the statement becomes
+ ~rw[ ← one_eq_succ_zero]~ changes ~succ 0~ to ~1~ so the statement becomes
 ~2 = succ 1~
-Then we do ~rw[two_eq_succ_zero]~ which changes ~succ 1~ to ~2~
+Then we do ~rw[← two_eq_succ_one]~ which changes ~succ 1~ to ~2~
 ~2 = 2~
 Doing ~rfl~ "checks" if they're equal then we're done.
 
+/The ← comes from typing \l in the prompt./
+/This is doing the reverse of the theorems./
+
+/rw[two_eq_succ_one] for example changes 2 to succ 1./
+/If you want the reverse then you use the arrow/
 ** Notes
 *** Tactics
 Tactics are commands that describe how to build a proof.
@@ -59,7 +64,8 @@ So ~2y = 2(x + 7)~ becomes ~2(x + 7) = 2(x + 7)~ and rfl closes it.
 *** Numbers
 Every number in lean is either 0 or a successor.
 ~succ~ is a constructor not a command.
-I'm not exactly sure what the difference it
+
+I'm not exactly sure what the difference is
 
 Where I ended:
 https://adam.math.hhu.de/#/g/leanprover-community/nng4/world/Tutorial/level/7

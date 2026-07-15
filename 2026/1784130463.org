@@ -1,0 +1,27 @@
+*  Day 2 of playing the natural number game
+** Log
+I continued from [[https://adam.math.hhu.de/#/g/leanprover-community/nng4/world/Tutorial/level/7][where I left off yesterday]].
+I spent a few minutes reading and re-reading the instructions and I was
+able to get it.
+This was the problem
+"Theorem succ_eq_add_one: For all natural numbers a, we have succ(a)=a+1."
+
+And this was my solution
+#+begin_src lean
+rw[one_eq_succ_zero] // succ n = n + succ 0
+rw[add_succ] // succ n = succ (n + 0)
+rw[add_zero] // succ n = succ n
+rfl
+#+end_src
+
+Pretty simple, makes sense.
+
+Now the first boss of the game
+~2 + 2 = 4~
+
+T_T
+
+Boss is OP.
+
+I'll try again tomorrow.
+
