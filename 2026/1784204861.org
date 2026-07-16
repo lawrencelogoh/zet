@@ -1,0 +1,35 @@
+*  Day 3 of playing the natural number game
+** Log
+I used two hints and I got
+- "nth_rewrite 2 [two_eq_succ_one] is I think quicker than rw
+[two_eq_succ_one]."
+- "Now you can rw [add_succ]"
+
+Here's my proof
+#+begin_src lean
+nth_rewrite 2 [two_eq_succ_one]
+rw[add_succ]
+rw[four_eq_succ_three]
+nth_rewrite 2 [succ_eq_add_one]
+rw[three_eq_succ_two]
+rw[succ_eq_add_one]
+rw[succ_eq_add_one]
+rfl
+#+end_src
+
+Here's an example proof the website gave
+#+begin_src lean
+nth_rewrite 2 [two_eq_succ_one] -- only change the second `2` to `succ 1`.
+rw [add_succ]
+rw [one_eq_succ_zero]
+rw [add_succ, add_zero] -- two rewrites at once
+rw [← three_eq_succ_two] -- change `succ 2` to `3`
+rw [← four_eq_succ_three]
+rfl
+#+end_src
+
+
+The key thing I learned is that you can change both sides.
+I was under the impression that I had to change only the right side to
+match the left side exactly.
+
